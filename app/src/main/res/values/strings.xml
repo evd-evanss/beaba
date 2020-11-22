@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">BeaBa</string>
+    <string name="toolbar_title">Olá, %s\n o que vamos aprender hoje?</string>
+
+    <!--PLACEHOLDERS LABELS-->
+    <string name="placeholder_empty_label">Não existem resultados.</string>
+    <string name="placeholder_empty_title">Erro!</string>
+    <string name="placeholder_error_title">Ops!</string>
+    <string name="placeholder_error_label">Houve um erro inesperado.</string>
+    <string name="placeholder_error_button_label">Tentar novamente</string>
+
+    <!--ACTIONS-->
+    <string name="yes">Sim</string>
+    <string name="no">Não</string>
+    <string name="action_ok">OK</string>
+    <string name="action_save">Salvar</string>
+    <string name="action_cancel">Cancelar</string>
+    <string name="dictate_vowels">Conhecer Vogais</string>
+    <string name="dictate_syllables">Ditar Silabas</string>
+    <string name="math_basic">Brincar com Números</string>
+    <string name="paint_free">Pintura Livre</string>
+    <string name="letter_a">A</string>
+    <string name="letter_e">E</string>
+    <string name="letter_i">I</string>
+    <string name="letter_o">O</string>
+    <string name="letter_u">U</string>
+    <string name="vocalic_ao">ÃO</string>
+    <string name="dictate_toolbar_title">Ditar Vogais</string>
+</resources>
