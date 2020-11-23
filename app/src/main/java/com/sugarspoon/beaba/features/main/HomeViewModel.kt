@@ -2,7 +2,7 @@ package com.sugarspoon.beaba.features.main
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.sugarspoon.beaba.data.HomeRepository
+import com.sugarspoon.beaba.data.repositories.HomeRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 
 class HomeViewModel(

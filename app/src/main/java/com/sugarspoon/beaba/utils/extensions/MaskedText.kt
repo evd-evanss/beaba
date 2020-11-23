@@ -1,14 +1,14 @@
-package com.sugarspoon.beaba.extensions
+package com.sugarspoon.beaba.utils.extensions
 
-import com.sugarspoon.beaba.extensions.MaskedType.Companion.CEL_PHONE
-import com.sugarspoon.beaba.extensions.MaskedType.Companion.CEP
-import com.sugarspoon.beaba.extensions.MaskedType.Companion.CNPJ
-import com.sugarspoon.beaba.extensions.MaskedType.Companion.CPF
-import com.sugarspoon.beaba.extensions.MaskedType.Companion.CPF_OR_CNPJ
-import com.sugarspoon.beaba.extensions.MaskedType.Companion.DATE
-import com.sugarspoon.beaba.extensions.MaskedType.Companion.HOUR
-import com.sugarspoon.beaba.extensions.MaskedType.Companion.PHONE
-import com.sugarspoon.beaba.extensions.MaskedType.Companion.RG
+import com.sugarspoon.beaba.utils.extensions.MaskedType.Companion.CEL_PHONE
+import com.sugarspoon.beaba.utils.extensions.MaskedType.Companion.CEP
+import com.sugarspoon.beaba.utils.extensions.MaskedType.Companion.CNPJ
+import com.sugarspoon.beaba.utils.extensions.MaskedType.Companion.CPF
+import com.sugarspoon.beaba.utils.extensions.MaskedType.Companion.CPF_OR_CNPJ
+import com.sugarspoon.beaba.utils.extensions.MaskedType.Companion.DATE
+import com.sugarspoon.beaba.utils.extensions.MaskedType.Companion.HOUR
+import com.sugarspoon.beaba.utils.extensions.MaskedType.Companion.PHONE
+import com.sugarspoon.beaba.utils.extensions.MaskedType.Companion.RG
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText

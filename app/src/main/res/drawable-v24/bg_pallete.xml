@@ -1,0 +1,15 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <solid android:color="@color/teal_200" />
+
+    <stroke
+        android:width="1dp"
+        android:color="@color/teal_200" />
+
+    <corners
+        android:topLeftRadius="@dimen/nav_round"
+        android:topRightRadius="@dimen/nav_round"
+        android:bottomLeftRadius="@dimen/nav_round"
+        android:bottomRightRadius="@dimen/nav_round"/>
+</shape>

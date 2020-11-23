@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import com.sugarspoon.beaba.extensions.setVisible
+import com.sugarspoon.beaba.utils.extensions.setVisible
 import kotlinx.android.synthetic.main.layout_toolbar.view.*
 
 open class BaseActivity : AppCompatActivity() {

@@ -6,12 +6,11 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.sugarspoon.beaba.R
+import com.sugarspoon.beaba.data.model.ItemHome
 import kotlinx.android.synthetic.main.item_home.view.*
 
 class HomeAdapter(private val onItemClicked: Listener) :
     RecyclerView.Adapter<BaseViewHolder<*>>() {
-
-    var onSubjectClicked: ((ItemHome.Subjects) -> Unit)? = null
 
     var list: MutableList<ItemHome.Subjects> = mutableListOf()
 

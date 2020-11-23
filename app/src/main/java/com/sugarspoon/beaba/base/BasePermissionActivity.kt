@@ -1,6 +1,6 @@
 package com.sugarspoon.beaba.base
 
-import com.sugarspoon.beaba.extensions.createAppSettingsIntent
+import com.sugarspoon.beaba.utils.extensions.createAppSettingsIntent
 import com.sugarspoon.beaba.utils.helpers.PermissionsHelper
 
 /**

@@ -1,4 +1,4 @@
-package com.sugarspoon.beaba.features.main
+package com.sugarspoon.beaba.data.model
 
 sealed class ItemHome {
     class Subjects(

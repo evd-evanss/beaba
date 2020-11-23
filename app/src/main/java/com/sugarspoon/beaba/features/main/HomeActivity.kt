@@ -4,13 +4,17 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.sugarspoon.beaba.R
 import com.sugarspoon.beaba.base.BaseActivity
-import com.sugarspoon.beaba.data.HomeRepository
-import com.sugarspoon.beaba.data.HomeRepository.Companion.DICTATE
-import com.sugarspoon.beaba.data.HomeRepository.Companion.MATHS
-import com.sugarspoon.beaba.data.HomeRepository.Companion.PAINT
-import com.sugarspoon.beaba.extensions.startActivitySlideTransition
+import com.sugarspoon.beaba.data.model.ItemHome
+import com.sugarspoon.beaba.data.repositories.HomeRepository
+import com.sugarspoon.beaba.data.repositories.HomeRepository.Companion.DICTATE
+import com.sugarspoon.beaba.data.repositories.HomeRepository.Companion.MATHS
+import com.sugarspoon.beaba.data.repositories.HomeRepository.Companion.PAINT
+import com.sugarspoon.beaba.data.repositories.HomeRepository.Companion.SYLLABLE
+import com.sugarspoon.beaba.utils.extensions.startActivitySlideTransition
+import com.sugarspoon.beaba.features.dictate.syllable.SyllableActivity
 import com.sugarspoon.beaba.features.dictate.vowel.DictateActivity
 import com.sugarspoon.beaba.features.math.MathActivity
 import com.sugarspoon.beaba.features.paint.PaintActivity
@@ -29,6 +33,8 @@ class HomeActivity : BaseActivity() {
                     when(item.router) {
                         DICTATE -> startActivitySlideTransition(
                             DictateActivity.intent(this@HomeActivity))
+                        SYLLABLE -> startActivitySlideTransition(
+                            SyllableActivity.intent(this@HomeActivity))
                         MATHS -> startActivitySlideTransition(
                             MathActivity.intent(this@HomeActivity))
                         PAINT -> startActivitySlideTransition(
@@ -48,6 +54,9 @@ class HomeActivity : BaseActivity() {
     }
 
     private fun setupUi() {
+        val navView: BottomNavigationView = findViewById(R.id.nav_view)
+        navView.itemIconTintList = null
+        navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
         homeItemsRv.layoutManager = LinearLayoutManager(this)
         homeItemsRv.adapter = adapter
     }
@@ -58,5 +67,20 @@ class HomeActivity : BaseActivity() {
                 adapter.list = it.toMutableList()
             }
         }
+    }
+
+    private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+        when (item.itemId) {
+            R.id.navigation_home -> {
+                // todo showHome()
+                return@OnNavigationItemSelectedListener true
+            }
+
+            R.id.navigation_profile -> {
+                // todo showProfile()
+                return@OnNavigationItemSelectedListener true
+            }
+        }
+        false
     }
 }

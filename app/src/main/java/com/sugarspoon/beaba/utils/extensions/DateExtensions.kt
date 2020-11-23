@@ -1,4 +1,4 @@
-package com.sugarspoon.beaba.extensions
+package com.sugarspoon.beaba.utils.extensions
 
 import android.annotation.SuppressLint
 import java.text.SimpleDateFormat

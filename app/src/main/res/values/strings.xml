@@ -26,4 +26,10 @@
     <string name="letter_u">U</string>
     <string name="vocalic_ao">ÃO</string>
     <string name="dictate_toolbar_title">Ditar Vogais</string>
+    <string name="syllable_toolbar">Vamos Aprender as sílabas</string>
+    <string name="maths_toolbar">Vamos Contar?</string>
+    <string name="title_home">Início</string>
+    <string name="title_profile">Meu Perfil</string>
+    <string name="canvasContentDescription">Desenho Livre</string>
+    <string name="paint_toolbar">Solte a Imaginação</string>
 </resources>

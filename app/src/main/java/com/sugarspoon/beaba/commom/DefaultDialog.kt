@@ -4,9 +4,9 @@ import android.content.Context
 import android.os.Bundle
 import com.sugarspoon.beaba.R
 import com.sugarspoon.beaba.base.BaseDialog
-import com.sugarspoon.beaba.extensions.getColorRes
-import com.sugarspoon.beaba.extensions.setVisible
-import com.sugarspoon.beaba.extensions.toStateList
+import com.sugarspoon.beaba.utils.extensions.getColorRes
+import com.sugarspoon.beaba.utils.extensions.setVisible
+import com.sugarspoon.beaba.utils.extensions.toStateList
 import kotlinx.android.synthetic.main.dialog_default.*
 
 /**

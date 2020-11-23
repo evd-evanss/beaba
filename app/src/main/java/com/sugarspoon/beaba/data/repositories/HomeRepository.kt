@@ -1,7 +1,7 @@
-package com.sugarspoon.beaba.data
+package com.sugarspoon.beaba.data.repositories
 
 import com.sugarspoon.beaba.R
-import com.sugarspoon.beaba.features.main.ItemHome
+import com.sugarspoon.beaba.data.model.ItemHome
 
 class HomeRepository {
 
@@ -16,7 +16,7 @@ class HomeRepository {
             icon = R.drawable.ic_teacher_man,
             text = R.string.dictate_syllables,
             color = R.color.purple_200,
-            router = DICTATE
+            router = SYLLABLE
         ),
         ItemHome.Subjects(
             icon = R.drawable.ic_abacus,
@@ -34,8 +34,8 @@ class HomeRepository {
 
     companion object {
         const val DICTATE = 1
-        const val MATHS = 2
-        const val PAINT = 3
+        const val SYLLABLE = 2
+        const val MATHS = 3
+        const val PAINT = 4
     }
-
 }

@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="toolbar_title">Olá, %s\n o que vamos aprender hoje?</string>
+    <string name="syllable_toolbar">Vamos Aprender as sílabas</string>
+    <string name="maths_toolbar">Vamos Contar?</string>
+    <string name="paint_toolbar">Solte a Imaginação</string>
 </resources>

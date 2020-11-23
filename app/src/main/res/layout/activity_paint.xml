@@ -4,6 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blue"
     tools:context=".features.paint.PaintActivity">
+
+    <include
+        android:id="@+id/include4"
+        layout="@layout/layout_toolbar" />
+
+    <com.sugarspoon.beaba.widgets.PaintView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

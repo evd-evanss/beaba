@@ -13,10 +13,15 @@
     <color name="blue">#3F52C8</color>
     <color name="green">#30D559</color>
     <color name="red">#F43737</color>
+    <color name="yellow">#F4EB37</color>
+    <color name="pink">#F437EB</color>
+    <color name="brown">#7C5042</color>
 
     <color name="success">@color/green</color>
     <color name="error">@color/red</color>
 
     <color name="color_gray">@color/gray</color>
+
+    <color name="colorTransparent">#00ffffff</color>
 
 </resources>

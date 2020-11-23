@@ -1,4 +1,4 @@
-package com.sugarspoon.beaba.extensions
+package com.sugarspoon.beaba.utils.extensions
 
 /**
  * Created by Evandro Costa 12/07/2020

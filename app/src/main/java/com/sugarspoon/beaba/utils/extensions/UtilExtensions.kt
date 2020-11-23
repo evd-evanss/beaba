@@ -1,4 +1,4 @@
-package com.sugarspoon.beaba.extensions
+package com.sugarspoon.beaba.utils.extensions
 
 import android.content.ActivityNotFoundException
 import android.content.Context

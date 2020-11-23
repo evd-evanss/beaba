@@ -1,4 +1,4 @@
-package com.sugarspoon.beaba.extensions
+package com.sugarspoon.beaba.utils.extensions
 
 import android.app.Activity
 import android.content.ClipData

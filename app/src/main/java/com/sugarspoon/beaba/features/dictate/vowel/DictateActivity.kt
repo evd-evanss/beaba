@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import com.sugarspoon.beaba.R
 import com.sugarspoon.beaba.base.BaseActivity
-import com.sugarspoon.beaba.extensions.intentFor
+import com.sugarspoon.beaba.utils.extensions.intentFor
 import com.sugarspoon.beaba.utils.helpers.MediaHelper
 import kotlinx.android.synthetic.main.activity_dictate.*
 
