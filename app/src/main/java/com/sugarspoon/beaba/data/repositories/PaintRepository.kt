@@ -14,6 +14,7 @@ class PaintRepository {
     val seekBarPencilVisibility = MutableStateFlow(StateVisibility(visibility = false))
     val seekBarEraserVisibility = MutableStateFlow(StateVisibility(visibility = false))
     val displayColorPicker = MutableStateFlow(StateVisibility(visibility = false))
+    val displayEraserPicker = MutableStateFlow(StateVisibility(visibility = false))
     private var handlePencil = false
     private var handleEraser = false
 
@@ -43,6 +44,10 @@ class PaintRepository {
 
     fun displayColorPicker() {
         displayColorPicker.value = StateVisibility(visibility = true)
+    }
+
+    fun displayEraserPicker() {
+        displayEraserPicker.value == StateVisibility(visibility = true)
     }
 
     fun setColor(resource: Int) {

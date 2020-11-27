@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".features.dictate.vowel.DictateActivity">
+    tools:context=".ui.dictate.vowel.DictateActivity">
 
     <include
         android:id="@+id/include2"
@@ -13,7 +13,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.sugarspoon.beaba.widgets.DictateView
+    <com.sugarspoon.beaba.ui.widgets.DictateView
         android:id="@+id/dictatePanelDv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

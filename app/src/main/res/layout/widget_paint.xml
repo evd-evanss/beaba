@@ -12,47 +12,20 @@
         android:layout_height="0dp"
         android:layout_margin="@dimen/horizontal_margin"
         android:background="@drawable/bg_draw_view"
-        app:layout_constraintBottom_toTopOf="@+id/widgetPaintPalette"
+        app:layout_constraintBottom_toTopOf="@+id/widgetPalette"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.sugarspoon.beaba.widgets.DrawView
+        <com.sugarspoon.beaba.ui.widgets.DrawView
             android:id="@+id/widgetPaintCanvas"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="@dimen/horizontal_margin" />
     </LinearLayout>
 
-    <SeekBar
-        android:id="@+id/widgetPaintPencilSeekBar"
-        android:layout_width="0dp"
-        android:layout_height="56dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:progress="5"
-        android:visibility="visible"
-        android:layout_marginHorizontal="@dimen/horizontal_margin"
-        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout"
-        tools:visibility="visible" />
-    <SeekBar
-        android:id="@+id/widgetPaintEraserSeekBar"
-        android:layout_width="0dp"
-        android:layout_height="56dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:progress="5"
-        android:visibility="visible"
-        android:layout_marginHorizontal="@dimen/horizontal_margin"
-        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout"
-        tools:visibility="visible" />
-
     <ImageView
-        android:id="@+id/widgetPaintPencil"
+        android:id="@+id/widgetPalette"
         android:layout_width="@dimen/icon_menu_paint"
         android:layout_height="@dimen/icon_menu_paint"
         android:layout_margin="@dimen/horizontal_margin"
@@ -61,24 +34,11 @@
         android:foreground="?android:attr/selectableItemBackground"
         android:src="@drawable/ic_paint"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/widgetPaintPalette"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
-        android:id="@+id/widgetPaintPalette"
-        android:layout_width="@dimen/icon_menu_paint"
-        android:layout_height="@dimen/icon_menu_paint"
-        android:layout_margin="@dimen/horizontal_margin"
-        android:clickable="true"
-        android:focusable="true"
-        android:foreground="?android:attr/selectableItemBackground"
-        android:src="@drawable/ic_palette"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/widgetPaintEraser"
-        app:layout_constraintStart_toEndOf="@+id/widgetPaintPencil" />
 
     <ImageView
-        android:id="@+id/widgetPaintEraser"
+        android:id="@+id/widgetPaletteEraser"
         android:layout_width="@dimen/icon_menu_paint"
         android:layout_height="@dimen/icon_menu_paint"
         android:layout_margin="@dimen/horizontal_margin"
@@ -88,7 +48,8 @@
         android:src="@drawable/ic_eraser"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/widgetPaintBlankSheet"
-        app:layout_constraintStart_toEndOf="@+id/widgetPaintPalette" />
+        app:layout_constraintStart_toEndOf="@+id/widgetPalette" />
+
 
     <ImageView
         android:id="@+id/widgetPaintBlankSheet"
@@ -100,6 +61,5 @@
         android:foreground="?android:attr/selectableItemBackground"
         android:src="@drawable/ic_blank_sheet"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/widgetPaintEraser" />
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

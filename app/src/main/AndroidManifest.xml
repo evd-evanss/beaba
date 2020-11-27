@@ -12,11 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BeaBa">
-        <activity android:name=".features.dictate.syllable.SyllableActivity"></activity>
-        <activity android:name=".features.paint.PaintActivity" />
-        <activity android:name=".features.math.MathActivity" />
-        <activity android:name=".features.dictate.vowel.DictateActivity" />
-        <activity android:name=".features.main.HomeActivity">
+        <activity android:name=".ui.dictate.syllable.SyllableActivity"></activity>
+        <activity android:name=".ui.paint.PaintActivity" />
+        <activity android:name=".ui.math.MathActivity" />
+        <activity android:name=".ui.dictate.vowel.DictateActivity" />
+        <activity android:name=".ui.main.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
