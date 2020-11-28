@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "919795480438",
+    "firebase_url": "https://beaba-1bcc5.firebaseio.com",
+    "project_id": "beaba-1bcc5",
+    "storage_bucket": "beaba-1bcc5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:919795480438:android:41421e84ce4f4e36762c57",
+        "android_client_info": {
+          "package_name": "com.sugarspoon.beaba"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "919795480438-u4mc7re5l84tpphr4tj9ie7cmmbjo0b3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCwAWd5cEoLdz7WgL-Ycpim6Oj0jZ5-38"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "919795480438-u4mc7re5l84tpphr4tj9ie7cmmbjo0b3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
