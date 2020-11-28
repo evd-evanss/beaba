@@ -7,20 +7,23 @@ import com.sugarspoon.beaba.R
 import com.sugarspoon.beaba.base.BaseDialog
 import kotlinx.android.synthetic.main.eraser_view.*
 
-class ErasePickerDialog(context: Context) : BaseDialog(context) {
+class EraserDialog(context: Context) : BaseDialog(context) {
 
     constructor(
         context: Context,
         title: String,
         seekBarEraser: ((Int) -> Unit),
+        progress: Int
     ) : this(context) {
         this.title = title
         this.seekBarEraser = seekBarEraser
+        this.progress = progress
     }
 
     private var title: String? = null
     private var dismissAction: (() -> Unit)? = null
     private var seekBarEraser: ((Int) -> Unit)? = null
+    private var progress: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +40,7 @@ class ErasePickerDialog(context: Context) : BaseDialog(context) {
     private fun setView() {
         setLayout()
         setListeners()
+        setProgress()
     }
 
     private fun setLayout() {
@@ -54,12 +58,16 @@ class ErasePickerDialog(context: Context) : BaseDialog(context) {
         })
     }
 
-    fun setTitle(title: String?): ErasePickerDialog {
+    private fun setProgress() {
+        widgetPaintEraserSeekBar.progress = progress
+    }
+
+    fun setTitle(title: String?): EraserDialog {
         this.title = title
         return this
     }
 
-    fun setDismissAction(dismissAction: () -> Unit): ErasePickerDialog {
+    fun setDismissAction(dismissAction: () -> Unit): EraserDialog {
         this.dismissAction = dismissAction
         return this
     }

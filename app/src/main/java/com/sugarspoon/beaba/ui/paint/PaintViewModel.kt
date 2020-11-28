@@ -3,35 +3,28 @@ package com.sugarspoon.beaba.ui.paint
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.sugarspoon.beaba.R
+import com.sugarspoon.beaba.data.model.PencilColor
+import com.sugarspoon.beaba.data.model.StateVisibility
+import com.sugarspoon.beaba.data.model.StrokeSize
 import com.sugarspoon.beaba.data.repositories.PaintRepository
+import kotlinx.coroutines.flow.MutableStateFlow
 
 class PaintViewModel(
     private val repository: PaintRepository
-) : ViewModel(){
+) : ViewModel() {
 
-    val strokePencil = repository.strokePencil
-    val strokeEraser = repository.strokeEraser
-    val seekBarPencilVisibility = repository.seekBarPencilVisibility
-    val seekBarEraserVisibility = repository.seekBarEraserVisibility
-    val displayColorPicker = repository.displayColorPicker
-    val displayEraserPicker = repository.displayEraserPicker
-    val color = repository.color
+    val state = PaintViewStates(
+        strokePencil = repository.strokePencil,
+        displayPaletteDialog = repository.displayColorPicker,
+        color = repository.color,
+    )
 
     fun setStrokePencil(stroke: Int) = repository.setStrokePencil(stroke)
 
-    fun setStrokeEraser(stroke: Int) = repository.setStrokeEraser(stroke)
-
-    fun handlePencilSeekBar() = repository.handlePencilSeekBar()
-
-    fun handleEraserSeekBar() = repository.handleEraserSeekBar()
-
     fun setColor(color: Int = R.color.black) = repository.setColor(resource = color)
 
-    fun displayColorPicker() = repository.displayColorPicker()
+    fun displayPaletteDialog() = repository.displayColorPicker()
 
-    fun displayEraserPicker() = repository.displayEraserPicker()
-
-    fun setEraser() = repository.setEraseColor()
 
     @Suppress("UNCHECKED_CAST")
     class Factory constructor(
@@ -43,4 +36,10 @@ class PaintViewModel(
             ) as T
         }
     }
+
+    data class PaintViewStates(
+        val strokePencil: MutableStateFlow<StrokeSize>? = null,
+        val displayPaletteDialog: MutableStateFlow<StateVisibility>? = null,
+        val color: MutableStateFlow<PencilColor>? = null
+    )
 }

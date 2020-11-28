@@ -4,7 +4,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/blue">
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/paintViewUndo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="@dimen/horizontal_margin"
+        android:layout_marginTop="@dimen/vertical_margin"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:src="@drawable/ic_return"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/paintViewClose"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="@dimen/horizontal_margin"
+        android:layout_marginTop="@dimen/vertical_margin"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:src="@drawable/ic_close"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -12,10 +38,10 @@
         android:layout_height="0dp"
         android:layout_margin="@dimen/horizontal_margin"
         android:background="@drawable/bg_draw_view"
-        app:layout_constraintBottom_toTopOf="@+id/widgetPalette"
+        app:layout_constraintBottom_toTopOf="@+id/widgetPalettePencil"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/paintViewClose">
 
         <com.sugarspoon.beaba.ui.widgets.DrawView
             android:id="@+id/widgetPaintCanvas"
@@ -25,7 +51,7 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/widgetPalette"
+        android:id="@+id/widgetPalettePencil"
         android:layout_width="@dimen/icon_menu_paint"
         android:layout_height="@dimen/icon_menu_paint"
         android:layout_margin="@dimen/horizontal_margin"
@@ -38,21 +64,7 @@
 
 
     <ImageView
-        android:id="@+id/widgetPaletteEraser"
-        android:layout_width="@dimen/icon_menu_paint"
-        android:layout_height="@dimen/icon_menu_paint"
-        android:layout_margin="@dimen/horizontal_margin"
-        android:clickable="true"
-        android:focusable="true"
-        android:foreground="?android:attr/selectableItemBackground"
-        android:src="@drawable/ic_eraser"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/widgetPaintBlankSheet"
-        app:layout_constraintStart_toEndOf="@+id/widgetPalette" />
-
-
-    <ImageView
-        android:id="@+id/widgetPaintBlankSheet"
+        android:id="@+id/widgetPaletteBlankSheet"
         android:layout_width="@dimen/icon_menu_paint"
         android:layout_height="@dimen/icon_menu_paint"
         android:layout_margin="@dimen/horizontal_margin"
@@ -62,4 +74,44 @@
         android:src="@drawable/ic_blank_sheet"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/containerPreview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/colorTransparentBlur"
+        android:elevation="30dp"
+        android:visibility="gone"
+        tools:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/paintViewPreview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            android:layout_margin="@dimen/horizontal_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/paintViewPreviewClose"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="@dimen/vertical_margin"
+            android:layout_marginEnd="@dimen/horizontal_margin"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:src="@drawable/ic_close"
+            app:layout_constraintEnd_toEndOf="@+id/paintViewPreview"
+            app:layout_constraintTop_toTopOf="@+id/paintViewPreview" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
