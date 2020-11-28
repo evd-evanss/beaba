@@ -20,8 +20,6 @@ class PaintActivity : BaseActivity() {
     private val factory = PaintViewModel.Factory(PaintRepository())
     private val viewModel by viewModels<PaintViewModel> { factory }
     private var progressPencil = 0
-    private var progressEraser = 0
-    private var pencilColor: Int = R.color.black
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

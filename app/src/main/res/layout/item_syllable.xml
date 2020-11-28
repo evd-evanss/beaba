@@ -7,6 +7,7 @@
     android:layout_height="200dp"
     android:layout_margin="@dimen/horizontal_margin_small"
     app:cardCornerRadius="@dimen/corner_radius_button"
+    android:layout_gravity="center"
     app:cardBackgroundColor="@color/purple_200"
     android:clickable="true"
     android:focusable="true"

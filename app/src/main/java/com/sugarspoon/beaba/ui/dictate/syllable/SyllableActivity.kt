@@ -5,6 +5,8 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.sugarspoon.beaba.R
 import com.sugarspoon.beaba.base.BaseActivity
 import com.sugarspoon.beaba.data.model.ItemSyllable
@@ -21,8 +23,8 @@ class SyllableActivity : BaseActivity() {
     private val adapter by lazy {
         SyllableAdapter(
             onItemClicked = object : SyllableAdapter.Listener {
-                override fun onItemClicked(item: ItemSyllable) {
-
+                override fun onItemClicked(adapterPosition: Int) {
+                    viewModel.setNextItem(adapterPosition)
                 }
             }
         )
@@ -37,14 +39,14 @@ class SyllableActivity : BaseActivity() {
     }
 
     private fun setupUi() {
-        syllableItemsRv.layoutManager = GridLayoutManager(this, 2)
+        syllableItemsRv.layoutManager = LinearLayoutManager(this )
         syllableItemsRv.adapter = adapter
     }
 
     private fun setupObserver() {
         this.lifecycleScope.launchWhenStarted {
             viewModel.items.collect {
-                adapter.list = it.toMutableList()
+                adapter.setItems(it.toMutableList())
             }
         }
     }

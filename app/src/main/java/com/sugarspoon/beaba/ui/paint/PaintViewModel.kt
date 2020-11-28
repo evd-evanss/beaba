@@ -19,12 +19,11 @@ class PaintViewModel(
         color = repository.color,
     )
 
-    fun setStrokePencil(stroke: Int) = repository.setStrokePencil(stroke)
-
     fun setColor(color: Int = R.color.black) = repository.setColor(resource = color)
 
-    fun displayPaletteDialog() = repository.displayColorPicker()
+    fun setStrokePencil(stroke: Int) = repository.setStrokePencil(stroke)
 
+    fun displayPaletteDialog() = repository.displayColorPicker()
 
     @Suppress("UNCHECKED_CAST")
     class Factory constructor(
