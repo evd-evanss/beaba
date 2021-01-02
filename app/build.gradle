@@ -9,7 +9,7 @@ plugins {
 
 def MAJOR = 1
 def MINOR = 0
-def PATCH = 0
+def PATCH = 1
 def HOTFIX = 0
 
 def getVersionName = {
@@ -27,8 +27,8 @@ android {
         applicationId "com.sugarspoon.beaba"
         minSdkVersion 23
         targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        versionCode getVersionCode()
+        versionName getVersionName()
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
