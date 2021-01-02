@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
+    android:layout_height="wrap_content"
     android:layout_margin="@dimen/horizontal_margin_small"
     app:cardCornerRadius="@dimen/corner_radius_button"
     app:cardBackgroundColor="@color/green"
@@ -16,17 +16,39 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center">
+
         <TextView
             android:id="@+id/itemNumberTv"
             style="@style/VeryBig"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="@dimen/vertical_margin" android:layout_gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="1" />
+
+        <ImageView
+            android:id="@+id/itemCountFingerLeft"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginBottom="@dimen/vertical_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/itemCountFingerRight"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/itemNumberTv"
+            app:tint="@color/white" />
+
+        <ImageView
+            android:id="@+id/itemCountFingerRight"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginBottom="@dimen/vertical_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/itemCountFingerLeft"
+            app:layout_constraintTop_toBottomOf="@+id/itemNumberTv"
+            app:tint="@color/white" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

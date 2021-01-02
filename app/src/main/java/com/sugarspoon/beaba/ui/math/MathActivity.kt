@@ -4,7 +4,7 @@ import android.content.Context
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.sugarspoon.beaba.R
 import com.sugarspoon.beaba.base.BaseActivity
 import com.sugarspoon.beaba.data.model.ItemCount
@@ -37,7 +37,9 @@ class MathActivity : BaseActivity() {
     }
 
     private fun setupUi() {
-        counterItemsRv.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL )
+        counterItemsRv.layoutManager = LinearLayoutManager(this)
+        counterItemsRv.setItemViewCacheSize(10)
+        counterItemsRv.setHasFixedSize(true)
         counterItemsRv.adapter = adapter
     }
 

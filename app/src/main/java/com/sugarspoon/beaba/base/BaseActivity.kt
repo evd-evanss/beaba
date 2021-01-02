@@ -1,6 +1,7 @@
 package com.sugarspoon.beaba.base
 
 import android.content.pm.ActivityInfo
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.ViewGroup

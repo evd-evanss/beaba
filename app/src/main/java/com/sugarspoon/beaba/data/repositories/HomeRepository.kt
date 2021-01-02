@@ -13,12 +13,6 @@ class HomeRepository {
             router = DICTATE
         ),
         ItemHome.Subjects(
-            icon = R.drawable.ic_teacher_man,
-            text = R.string.dictate_syllables,
-            color = R.color.purple_200,
-            router = SYLLABLE
-        ),
-        ItemHome.Subjects(
             icon = R.drawable.ic_abacus,
             text = R.string.math_basic,
             color = R.color.green,

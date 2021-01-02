@@ -1,10 +1,10 @@
 package com.sugarspoon.beaba.ui.main
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.sugarspoon.beaba.R
 import com.sugarspoon.beaba.base.BaseActivity
 import com.sugarspoon.beaba.data.model.ItemHome
@@ -12,12 +12,10 @@ import com.sugarspoon.beaba.data.repositories.HomeRepository
 import com.sugarspoon.beaba.data.repositories.HomeRepository.Companion.DICTATE
 import com.sugarspoon.beaba.data.repositories.HomeRepository.Companion.MATHS
 import com.sugarspoon.beaba.data.repositories.HomeRepository.Companion.PAINT
-import com.sugarspoon.beaba.data.repositories.HomeRepository.Companion.SYLLABLE
-import com.sugarspoon.beaba.utils.extensions.startActivitySlideTransition
-import com.sugarspoon.beaba.ui.dictate.syllable.SyllableActivity
 import com.sugarspoon.beaba.ui.dictate.vowel.DictateActivity
 import com.sugarspoon.beaba.ui.math.MathActivity
 import com.sugarspoon.beaba.ui.paint.PaintActivity
+import com.sugarspoon.beaba.utils.extensions.startActivitySlideTransition
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.flow.collect
 
@@ -33,8 +31,6 @@ class HomeActivity : BaseActivity() {
                     when(item.router) {
                         DICTATE -> startActivitySlideTransition(
                             DictateActivity.intent(this@HomeActivity))
-                        SYLLABLE -> startActivitySlideTransition(
-                            SyllableActivity.intent(this@HomeActivity))
                         MATHS -> startActivitySlideTransition(
                             MathActivity.intent(this@HomeActivity))
                         PAINT -> startActivitySlideTransition(
@@ -45,6 +41,8 @@ class HomeActivity : BaseActivity() {
         )
     }
 
+    lateinit var mediaPlayer: MediaPlayer
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -53,9 +51,32 @@ class HomeActivity : BaseActivity() {
         setupObserver()
     }
 
+    override fun onResume() {
+        super.onResume()
+        mediaPlayer = MediaPlayer.create(this, R.raw.theme)
+        mediaPlayer.start()
+        setupReplay()
+    }
+
+    private fun setupReplay() {
+        mediaPlayer.setOnCompletionListener {
+            it.start()
+        }
+    }
+
     private fun setupUi() {
         homeItemsRv.layoutManager = LinearLayoutManager(this)
         homeItemsRv.adapter = adapter
+    }
+
+    override fun onPause() {
+        super.onPause()
+        mediaPlayer.pause()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mediaPlayer.stop()
     }
 
     private fun setupObserver() {
