@@ -5,6 +5,7 @@ plugins {
     id 'androidx.navigation.safeargs'
     id 'kotlin-kapt'
     id 'com.google.gms.google-services'
+    id 'com.google.firebase.appdistribution'
 }
 
 def MAJOR = 1
@@ -19,6 +20,10 @@ def getVersionName = {
 def getVersionCode = {
     return 10000000 * MAJOR + 100000 * MINOR + 100 * PATCH + HOTFIX
 }
+
+//Firebase credentials
+def serviceCredentials = rootProject.file("app/beaba-1bcc5-firebase-adminsdk-rms62-f479f662dd.json")
+
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.1"
@@ -45,6 +50,29 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+
+    flavorDimensions "environment"
+
+    productFlavors {
+        prod {
+            dimension "environment"
+            firebaseAppDistribution {
+                serviceCredentialsFile = serviceCredentials
+                releaseNotesFile=""
+                testersFile="app/beaba_testers.txt"
+            }
+        }
+        hml {
+            dimension "environment"
+            versionNameSuffix '-HML'
+            applicationIdSuffix ".hml"
+            firebaseAppDistribution {
+                serviceCredentialsFile = serviceCredentials
+                releaseNotesFile=""
+                testersFile="app/beaba_testers.txt"
+            }
+        }
     }
 }
 
